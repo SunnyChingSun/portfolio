@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a href="../cv/index.html">CV</a></li>
+            <li><a href="index.html" class="current">Contact</a></li>
+        </ul>
+    </nav>
     <h1>Contact</h1>
 
-    <nav>
-        <a href="../index.html">Home</a> |
-        <a href="../cv/index.html">CV</a> |
-        <a href="../projects/index.html">Projects</a>
-    </nav>
-
     <form action="mailto:chs019@ucsd.edu" method="POST" enctype="text/plain">
-        <p>
-            <label for="email">Email:</label>
+        <label for="email">
+            Email:
             <input type="email" id="email" name="email" required value="sunnychingsun@gmail.com">
-        </p>
-        <p>
-            <label for="subject">Subject:</label>
+        </label>
+        
+        <label for="subject">
+            Subject:
             <input id="subject" name="subject" value="Test Subject">
-        </p>
-        <p>
-            <label for="body">Message:</label>
-            <textarea id="body" name="body">This is a test message.</textarea>
-        </p>
+        </label>
+        
+        <label for="body">
+            Message:
+            <textarea id="body" name="body">Hello World.</textarea>
+        </label>
+        
         <button>Send Message</button>
     </form>
 </body>
