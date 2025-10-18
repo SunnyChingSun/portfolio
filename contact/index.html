@@ -5,24 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="../style.css">
+    <script type="module" src="../global.js"></script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../projects/index.html">Projects</a></li>
-            <li><a href="../cv/index.html">CV</a></li>
-            <li><a href="index.html" class="current">Contact</a></li>
-        </ul>
-    </nav>
     <h1>Contact</h1>
 
-    <form action="mailto:chs019@ucsd.edu" method="POST" enctype="text/plain">
-        <label for="email">
-            Email:
-            <input type="email" id="email" name="email" required value="sunnychingsun@gmail.com">
-        </label>
-        
+    <form action="mailto:sunnychingsun@gmail.com">
         <label for="subject">
             Subject:
             <input id="subject" name="subject" value="Test Subject">
@@ -33,7 +21,7 @@
             <textarea id="body" name="body">Hello World.</textarea>
         </label>
         
-        <button>Send Message</button>
+        <button type="submit">Send Message</button>
     </form>
 </body>
 </html>

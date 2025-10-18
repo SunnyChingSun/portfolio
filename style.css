@@ -1,5 +1,27 @@
 :root {
   --color-accent: oklch(65% 50% 0);
+  --text-primary: oklch(20% 0% 0);
+  --text-secondary: oklch(50% 0% 0);
+  --text-muted: oklch(70% 0% 0);
+  --border-subtle: oklch(80% 0% 0);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: oklch(95% 0% 0);
+    --text-secondary: oklch(85% 0% 0);
+    --text-muted: oklch(75% 0% 0);
+    --border-subtle: oklch(80% 0% 0);
+  }
+}
+
+/* Dark mode when color-scheme is set to dark */
+:root[style*="color-scheme: dark"] {
+  --text-primary: oklch(95% 0% 0);
+  --text-secondary: oklch(85% 0% 0);
+  --text-muted: oklch(75% 0% 0);
+  --border-subtle: oklch(80% 0% 0);
 }
 
 html {
@@ -20,7 +42,8 @@ nav li {
 nav {
   display: flex;
   margin-bottom: 2em;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  --border-color: oklch(50% 10% 200 / 40%);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -32,18 +55,27 @@ nav a {
 }
 
 nav a.current {
-  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom: 0.4em solid var(--border-subtle);
   padding-bottom: 0.1em;
 }
 
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
-input, textarea, button {
+input, textarea, button, select {
   font: inherit;
+}
+
+/* Dark mode switcher positioning */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
 }
 
 form {
@@ -108,7 +140,7 @@ header h1:last-of-type {
 header address {
   font-style: normal;
   line-height: 1.4;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 header address a {
@@ -140,13 +172,13 @@ section h2 {
 section article {
   margin-bottom: 2em;
   padding-left: 1em;
-  border-left: 3px solid oklch(90% 2% 200);
+  border-left: 3px solid var(--border-subtle);
 }
 
 section article h3 {
   font-size: 125%;
   margin-bottom: 0.5em;
-  color: #333;
+  color: var(--text-primary) !important;
 }
 
 section article h4 {
@@ -161,16 +193,16 @@ section article p {
 }
 
 section article p strong {
-  color: #333;
+  color: var(--text-primary);
 }
 
 section article p em {
-  color: #666;
+  color: var(--text-secondary);
 }
 
 section article time {
   font-weight: 500;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 /* Lists styling */
@@ -212,7 +244,7 @@ section dd {
 hr {
   border: none;
   height: 1px;
-  background: linear-gradient(to right, transparent, oklch(80% 3% 200), transparent);
+  background: linear-gradient(to right, transparent, var(--border-subtle), transparent);
   margin: 2em 0;
 }
 
