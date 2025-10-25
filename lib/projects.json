@@ -2,7 +2,7 @@
   {
     "title": "Personal Portfolio Website",
     "year": "2025",
-    "image": "../images/profile-portfolio.png",
+    "image": "/portfolio/images/profile-portfolio.png",
     "description": "A responsive personal portfolio website built with HTML, CSS, and JavaScript. Features dynamic project loading, dark mode toggle, and GitHub API integration."
   },
   {
