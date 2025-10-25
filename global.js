@@ -179,7 +179,18 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     
     // Handle missing data gracefully
     const title = project.title || 'Untitled Project';
-    const image = project.image || 'https://vis-society.github.io/labs/2/images/empty.svg';
+    let image = project.image || 'https://vis-society.github.io/labs/2/images/empty.svg';
+    
+    // Fix image path for local development vs GitHub Pages
+    if (image.startsWith('../images/')) {
+      const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+      if (isLocal) {
+        image = image.replace('../', '');
+      } else {
+        image = image.replace('../', '/portfolio/');
+      }
+    }
+    
     const description = project.description || 'No description available.';
     const year = project.year || 'Unknown';
     
