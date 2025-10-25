@@ -1,27 +1,29 @@
 :root {
-  --color-accent: oklch(65% 50% 0);
-  --text-primary: oklch(20% 0% 0);
-  --text-secondary: oklch(50% 0% 0);
-  --text-muted: oklch(70% 0% 0);
-  --border-subtle: oklch(80% 0% 0);
+  --color-accent: #ff6b35;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-muted: #666666;
+  --border-subtle: #cccccc;
   color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-primary: oklch(95% 0% 0);
-    --text-secondary: oklch(85% 0% 0);
-    --text-muted: oklch(75% 0% 0);
-    --border-subtle: oklch(80% 0% 0);
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #aaaaaa;
+    --border-subtle: #666666;
   }
 }
 
 /* Dark mode when color-scheme is set to dark */
-:root[style*="color-scheme: dark"] {
-  --text-primary: oklch(95% 0% 0);
-  --text-secondary: oklch(85% 0% 0);
-  --text-muted: oklch(75% 0% 0);
-  --border-subtle: oklch(80% 0% 0);
+html[style*="color-scheme: dark"],
+:root[style*="color-scheme: dark"],
+html.dark-mode {
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #aaaaaa;
+  --border-subtle: #666666;
 }
 
 html {
@@ -101,13 +103,35 @@ form button {
 }
 
 .projects article {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
 .projects article h2 {
   margin: 0;
+}
+
+.projects article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.3em;
+  margin-bottom: 1em;
+}
+
+.projects article p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.project-year {
+
+  font-weight: bold;
+  color: var(--color-accent);
+  font-size: 0.9em;
+  line-height: 1.2;
 }
 
 h1 {
@@ -117,6 +141,15 @@ h1 {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
   text-wrap: balance;
+}
+
+/* Home page section titles styling */
+.section-title {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 1em;
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 0.3em;
 }
 
 /* CV Page Styling */
@@ -246,6 +279,95 @@ hr {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--border-subtle), transparent);
   margin: 2em 0;
+}
+
+/* Introduction Section Styling */
+.intro-section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2em;
+  align-items: center;
+  margin: 2em 0;
+}
+
+.intro-section img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 0.5em;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.intro-content p {
+  margin: 0;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.intro-section a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.intro-section a:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .intro-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1em;
+  }
+  
+  .intro-section img {
+    max-width: 150px;
+    margin: 0 auto;
+  }
+}
+
+/* GitHub Profile Stats Styling */
+#profile-stats {
+  margin: 3em 0;
+}
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+#profile-stats dt {
+  grid-row: 1;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  margin: 0;
+  padding: 0;
+}
+
+#profile-stats dd {
+  grid-row: 2;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+  line-height: 1;
 }
 
 /* Print-friendly styles */

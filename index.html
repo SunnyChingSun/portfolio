@@ -6,11 +6,29 @@
     <title>Sunny Sun: Personal site and portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script type="module" src="global.js"></script>
+    <script type="module" src="index.js" defer></script>
 </head>
 <body>
     <h1>Sunny Sun</h1>
-    <img src="images/sun.gif" alt="Sunny Sun">
-    <p>Hi, I am Sunny, a third-year UCSD data science student. Welcome to my personal site and portfolio!</p>
-</body>
+    <div class="intro-section">
+        <img src="images/sun.gif" alt="Sunny Sun">
+        <div class="intro-content">
+            <p>Hi, I am Sunny, a third-year UCSD data science student passionate about transforming data into actionable insights. Welcome to my personal site and portfolio!</p>
+            
+            <p>I specialize in machine learning, data visualization, and full-stack development. My journey in data science has led me to work on diverse projects ranging from predictive modeling to interactive dashboards. I'm particularly interested in applying AI and statistical methods to solve real-world problems.</p>
+            
+            <p>Feel free to explore my work - you can check my <a href="cv/">CV</a> for my complete background, browse through my <a href="projects/">projects</a> to see what I've been working on, or <a href="contact/">contact me</a> if you'd like to collaborate or have any questions!</p>
+        </div>
+    </div>
+    
+    <h2 class="section-title">Latest Projects</h2>
+    <div class="projects">
+        <!-- Dynamically added content will appear here -->
+    </div>
+    
+    <h2 class="section-title">GitHub Stats</h2>
+    <div id="profile-stats">
+        <!-- GitHub data will be loaded here -->
+    </div>
 </body>
 </html>

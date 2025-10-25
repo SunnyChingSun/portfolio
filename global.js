@@ -1,11 +1,9 @@
-// Step 1: Adding a JS file to all pages
 console.log('IT\'S ALIVE!');
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-// Step 2: Automatic current page link
 // Get all nav links
 let navLinks = $$("nav a");
 
@@ -17,7 +15,6 @@ let currentLink = navLinks.find(
 // Add the current class to the current page link
 currentLink?.classList.add('current');
 
-// Step 3: Dynamic navigation menu
 // Define pages array
 let pages = [
   { url: '', title: 'Home' },
@@ -63,7 +60,6 @@ for (let p of pages) {
   nav.append(a);
 }
 
-// Step 4: Dark mode switcher
 // Add dark mode switcher HTML
 document.body.insertAdjacentHTML(
   'afterbegin',
@@ -84,6 +80,8 @@ let select = document.querySelector('select');
 // Function to set color scheme
 function setColorScheme(colorScheme) {
   document.documentElement.style.setProperty('color-scheme', colorScheme);
+  // Add class for additional CSS targeting
+  document.documentElement.classList.toggle('dark-mode', colorScheme === 'dark');
 }
 
 // Add event listener for color scheme changes
@@ -134,3 +132,69 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+    return [];
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  // Clear existing content
+  containerElement.innerHTML = '';
+  
+  // Validate parameters
+  if (!Array.isArray(projects)) {
+    console.error('Projects must be an array');
+    return;
+  }
+  
+  if (!containerElement) {
+    console.error('Container element is required');
+    return;
+  }
+  
+  // Validate heading level
+  const validHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  if (!validHeadings.includes(headingLevel)) {
+    console.warn(`Invalid heading level: ${headingLevel}. Using h2 instead.`);
+    headingLevel = 'h2';
+  }
+  
+  // Render each project
+  projects.forEach(project => {
+    const article = document.createElement('article');
+    
+    // Handle missing data gracefully
+    const title = project.title || 'Untitled Project';
+    const image = project.image || 'https://vis-society.github.io/labs/2/images/empty.svg';
+    const description = project.description || 'No description available.';
+    const year = project.year || 'Unknown';
+    
+    article.innerHTML = `
+      <${headingLevel}>${title}</${headingLevel}>
+      <img src="${image}" alt="${title}">
+      <div class="project-year">${year}</div>
+      <p>${description}</p>
+    `;
+    
+    containerElement.appendChild(article);
+  });
+}
+
+// Step 3: GitHub API functions
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
