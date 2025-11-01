@@ -126,8 +126,95 @@ form button {
   color: var(--text-secondary);
 }
 
-.project-year {
+/* Search bar styling */
+.searchBar {
+  width: 100%;
+  padding: 0.75em;
+  border: 2px solid var(--border-subtle);
+  border-radius: 0.5em;
+  font-size: 1em;
+  margin: 2em auto;
+  display: block;
+}
 
+.searchBar:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* Chart container */
+.chart-container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  margin: 2em 0;
+}
+
+/* Pie chart SVG styling */
+#projects-pie-plot {
+  max-width: 20em;
+  overflow: visible;
+}
+
+#projects-pie-plot path {
+  cursor: pointer;
+  transition: opacity 300ms;
+}
+
+/* Hover effect: fade out non-hovered wedges */
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+/* Selected wedge styling */
+path.selected {
+  fill: #c2185b !important; /* Dark pink color for selected */
+}
+
+li.selected .swatch {
+  background-color: #c2185b !important;
+}
+
+/* Fade out non-selected wedges when one is selected */
+#projects-pie-plot:has(path.selected) path:not(.selected) {
+  opacity: 0.5;
+}
+
+/* Legend styling */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 0.5em;
+  padding: 1em;
+  margin: 0;
+  list-style: none;
+  border: 2px solid var(--border-subtle);
+  border-radius: 0.5em;
+  flex: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.legend-item:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 0.3em;
+  background-color: var(--color);
+}
+
+.project-year {
+  margin-bottom: 0.5em;
   font-weight: bold;
   color: var(--color-accent);
   font-size: 0.9em;
