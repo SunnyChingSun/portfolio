@@ -189,6 +189,16 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       } else {
         image = image.replace('../', '/portfolio/');
       }
+    } else if (image.startsWith('images/')) {
+      // Handle images/ paths - need to adjust based on current page location
+      const pathname = location.pathname;
+      const isProjectsPage = pathname.includes('/projects/') || pathname.includes('/projects');
+      
+      if (isProjectsPage) {
+        // On projects page, need to go up one level
+        image = '../' + image;
+      }
+      // On home page, images/ path is already correct, no change needed
     }
     
     const description = project.description || 'No description available.';
