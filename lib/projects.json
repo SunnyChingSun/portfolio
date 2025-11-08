@@ -1,92 +1,98 @@
 [
   {
+    "title": "IsleNet: Island Shrinkage Detection via Remote Sensing",
+    "year": "2025",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=200&fit=crop",
+    "description": "Deep learning framework using satellite imagery with U-Net segmentation to detect and forecast island shrinkage, visualized through a Streamlit dashboard.",
+    "skills": ["Python", "Deep Learning", "Remote Sensing"],
+    "links": {
+      "code": "https://github.com/SunnyChingSun/IsleNet",
+      "paper": "https://example.com/islenet-paper"
+    }
+  },
+  {
     "title": "Personal Portfolio Website",
     "year": "2025",
     "image": "images/profile-portfolio.png",
-    "description": "A responsive personal portfolio website built with HTML, CSS, and JavaScript. Features dynamic project loading, dark mode toggle, and GitHub API integration."
+    "description": "Responsive personal portfolio website with dynamic project loading, dark mode toggle, and GitHub API integration.",
+    "skills": ["HTML", "CSS", "JavaScript", "D3.js"],
+    "links": {
+      "code": "https://github.com/SunnyChingSun/portfolio",
+      "website": "https://sunnychingsun.github.io/portfolio/"
+    }
   },
+  
   {
-    "title": "Data Visualization Dashboard",
+    "title": "Recipe Health Analysis Project",
     "year": "2025",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop",
-    "description": "Interactive dashboard for analyzing sales data using D3.js. Includes multiple chart types, filtering capabilities, and real-time data updates."
+    "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=200&fit=crop",
+    "description": "Data-driven recipe health scoring system analyzing nutrition and ingredients using machine learning to predict healthiness ratings.",
+    "skills": ["Python", "Machine Learning", "Data Analysis"],
+    "links": {
+      "code": "https://github.com/SunnyChingSun/recipe-health-analysis",
+      "website": "https://sunnychingsun.github.io/recipe-health-analysis/"
+    }
   },
   {
-    "title": "Machine Learning Model for Stock Prediction",
+    "title": "Jeanotype: AI Fashion Style Classifier",
+    "year": "2025",
+    "image": "https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?w=400&h=200&fit=crop",
+    "description": "CNN-based machine learning model that classifies outfit styles from images using feature extraction and clustering to identify fashion patterns.",
+    "skills": ["Python", "CNN", "Computer Vision", "TensorFlow"],
+    "links": {
+      "code": "https://github.com/SunnyChingSun/jeanotype",
+      "website": "https://example.com/jeanotype"
+    }
+  },
+  {
+    "title": "Superhero Movie Sequel Prediction",
     "year": "2024",
-    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=200&fit=crop",
-    "description": "Built a neural network model using TensorFlow to predict stock prices. Achieved 85% accuracy on test data with feature engineering and hyperparameter tuning."
+    "image": "https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?w=400&h=200&fit=crop",
+    "description": "Machine learning model predicting superhero movie sequels using IMDb and box office data with logistic regression and Random Forest classifiers.",
+    "skills": ["Python", "Machine Learning", "Random Forest", "Web Scraping"],
+    "links": {
+      "code": "https://github.com/SunnyChingSun/movie-sequel-prediction"
+    }
   },
   {
-    "title": "Web Scraping and Data Analysis",
+    "title": "NSF HDR iHARP Machine Learning Challenge",
+    "year": "2025",
+    "image": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=400&h=200&fit=crop",
+    "description": "Analyzed 20 years of sea-level data using Random Forests to detect anomalies and improve prediction accuracy by 20%.",
+    "skills": ["Python", "Random Forest", "Time Series", "Anomaly Detection"],
+    "links": {
+      "paper": "https://example.com/iharp-paper"
+    }
+  },
+  {
+    "title": "Duolingo Review Analysis",
+    "year": "2024",
+    "image": "https://images.unsplash.com/photo-1603570417039-6b5fcbfc6778?w=400&h=200&fit=crop",
+    "description": "Sentiment analysis of 2,500+ Duolingo reviews using SQL and Python, visualized through Tableau dashboards.",
+    "skills": ["Python", "SQL", "Tableau", "Sentiment Analysis"],
+    "links": {
+      "code": "https://github.com/SunnyChingSun/duolingo-analysis"
+    }
+  },
+  {
+    "title": "DiamondHack: Search & Rescue Website",
+    "year": "2024",
+    "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=200&fit=crop",
+    "description": "Responsive search-and-rescue website developed during a 48-hour hackathon with enhanced accessibility features.",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "links": {
+      "code": "https://github.com/SunnyChingSun/diamondhack",
+      "website": "https://example.com/diamondhack"
+    }
+  },
+  {
+    "title": "Age-Based Digital Divide Research",
     "year": "2023",
-    "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop",
-    "description": "Scraped e-commerce websites to analyze pricing trends. Used Python with BeautifulSoup and pandas for data collection and analysis."
-  },
-  {
-    "title": "Database Design for Library Management",
-    "year": "2023",
-    "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&h=200&fit=crop",
-    "description": "Designed and implemented a relational database system for library management using MySQL. Includes user authentication, book tracking, and reporting features."
-  },
-  {
-    "title": "Statistical Analysis of Climate Data",
-    "year": "2023",
-    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=200&fit=crop",
-    "description": "Analyzed 20 years of climate data using R and Python. Performed regression analysis, time series forecasting, and created comprehensive visualizations."
-  },
-  {
-    "title": "Mobile App for Expense Tracking",
-    "year": "2023",
-    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=200&fit=crop",
-    "description": "Developed a cross-platform mobile app using React Native for personal expense tracking. Features include budget planning, category analysis, and data export."
-  },
-  {
-    "title": "Natural Language Processing for Sentiment Analysis",
-    "year": "2022",
-    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop",
-    "description": "Built a sentiment analysis model using NLTK and scikit-learn to classify customer reviews. Processed over 10,000 reviews with 92% accuracy."
-  },
-  {
-    "title": "Computer Vision for Object Detection",
-    "year": "2022",
-    "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=200&fit=crop",
-    "description": "Implemented YOLO algorithm for real-time object detection in video streams. Optimized model for mobile deployment with TensorFlow Lite."
-  },
-  {
-    "title": "Data Pipeline for ETL Processing",
-    "year": "2022",
-    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop",
-    "description": "Created an automated data pipeline using Apache Airflow for processing large datasets. Includes data validation, transformation, and loading into data warehouse."
-  },
-  {
-    "title": "Interactive Data Visualization with Tableau",
-    "year": "2021",
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop",
-    "description": "Developed comprehensive business intelligence dashboards for retail analytics. Created interactive visualizations for sales performance, customer segmentation, and trend analysis."
-  },
-  {
-    "title": "Python Web Application with Flask",
-    "year": "2021",
-    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop",
-    "description": "Built a full-stack web application for task management using Flask, SQLAlchemy, and Bootstrap. Features user authentication, CRUD operations, and responsive design."
-  },
-  {
-    "title": "Data Mining Project on Social Media",
-    "year": "2021",
-    "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=200&fit=crop",
-    "description": "Analyzed social media data to identify trending topics and user engagement patterns. Used clustering algorithms and network analysis techniques."
-  },
-  {
-    "title": "Time Series Forecasting for Energy Consumption",
-    "year": "2022",
-    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=200&fit=crop",
-    "description": "Developed forecasting models for energy consumption prediction using ARIMA and LSTM. Achieved 15% improvement in prediction accuracy compared to baseline models."
-  },
-  {
-    "title": "A/B Testing Framework for E-commerce",
-    "year": "2023",
-    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop",
-    "description": "Designed and implemented A/B testing framework for e-commerce website optimization. Increased conversion rates by 23% through systematic testing and analysis."
+    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=200&fit=crop",
+    "description": "Research analyzing technology use among 60 elderly participants, visualized through Power BI to highlight the digital divide.",
+    "skills": ["SQL", "Power BI", "Data Analysis"],
+    "links": {
+      "paper": "https://example.com/digital-divide-paper"
+    }
   }
 ]

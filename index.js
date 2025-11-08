@@ -18,14 +18,26 @@ const githubData = await fetchGitHubData('SunnyChingSun');
 // Select the profile stats container
 const profileStats = document.querySelector('#profile-stats');
 
-// Update the HTML with GitHub data
+// Update the HTML with GitHub data (GitHub-style layout)
 if (profileStats) {
   profileStats.innerHTML = `
-    <dl>
-      <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
-      <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
-      <dt>Followers:</dt><dd>${githubData.followers}</dd>
-      <dt>Following:</dt><dd>${githubData.following}</dd>
-    </dl>
+    <div class="github-stats">
+      <div class="github-stat-item">
+        <div class="github-stat-label">Followers</div>
+        <div class="github-stat-value">${githubData.followers}</div>
+      </div>
+      <div class="github-stat-item">
+        <div class="github-stat-label">Following</div>
+        <div class="github-stat-value">${githubData.following}</div>
+      </div>
+      <div class="github-stat-item">
+        <div class="github-stat-label">Public Repos</div>
+        <div class="github-stat-value">${githubData.public_repos}</div>
+      </div>
+      <div class="github-stat-item">
+        <div class="github-stat-label">Public Gists</div>
+        <div class="github-stat-value">${githubData.public_gists}</div>
+      </div>
+    </div>
   `;
 }

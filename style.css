@@ -221,6 +221,68 @@ li.selected .swatch {
   line-height: 1.2;
 }
 
+/* Project skills tags */
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-bottom: 0.75em;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border-radius: 1em;
+  font-size: 0.85em;
+  font-weight: 500;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Project links */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  background-color: var(--border-subtle);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 0.5em;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-link:hover {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.project-link:visited {
+  color: var(--text-primary);
+}
+
+.project-link:visited:hover {
+  color: #ffffff;
+}
+
 h1 {
   font-size: 400%;
 }
@@ -232,9 +294,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Home page section titles styling */
 .section-title {
-  color: var(--color-accent);
+  font-size: 2em;
   font-weight: 600;
-  margin-bottom: 1em;
+  margin: 2em 0 1em 0;
+  color: var(--text-primary);
   border-bottom: 2px solid var(--color-accent);
   padding-bottom: 0.3em;
 }
@@ -421,40 +484,371 @@ hr {
   }
 }
 
-/* GitHub Profile Stats Styling */
+/* GitHub Profile Stats Styling - GitHub Style */
 #profile-stats {
-  margin: 3em 0;
+  margin: 2em 0 3em 0;
 }
 
-#profile-stats dl {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2em;
+.github-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
+  align-items: flex-start;
+  gap: 2em 0;
 }
 
-#profile-stats dt {
-  grid-row: 1;
-  font-weight: 500;
+.github-stat-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  min-width: 80px;
+}
+
+.github-stat-label {
+  font-weight: 400;
   color: var(--text-muted);
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.8em;
-  margin: 0;
+  letter-spacing: 0.05em;
+  font-size: 0.75em;
+  margin: 0 0 0.5em 0;
   padding: 0;
+  line-height: 1.2;
 }
 
-#profile-stats dd {
-  grid-row: 2;
-  text-align: center;
+.github-stat-value {
   font-size: 2.5em;
   font-weight: 400;
-  margin: 0;
-  padding: 0;
   color: var(--text-primary);
   line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section Titles - GitHub Style */
+h2.section-title,
+h2:has(+ #stats),
+h2:has(+ #profile-stats) {
+  font-size: 2em;
+  font-weight: 600;
+  margin: 2em 0 1em 0;
+  color: var(--text-primary);
+}
+
+#stats {
+  margin: 2em 0 3em 0;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  align-items: flex-start;
+  gap: 2em 0;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  min-width: 80px;
+}
+
+.stat-label {
+  font-weight: 400;
+  color: var(--text-muted);
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75em;
+  margin: 0 0 0.5em 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.stat-value-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 0.25em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.stat-value {
+  font-size: 2.5em;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-unit {
+  font-size: 0.6em;
+  font-weight: 400;
+  color: var(--text-muted);
+  opacity: 0.8;
+  margin-left: 0.25em;
+}
+
+/* Scatterplot styling */
+#chart {
+  margin: 2em 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+#chart svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.gridlines line {
+  stroke: var(--border-subtle);
+  stroke-width: 1;
+  stroke-dasharray: 2, 2;
+  opacity: 0.5;
+}
+
+.gridlines path {
+  display: none;
+}
+
+/* Y-axis styling to prevent text clipping */
+.y-axis text {
+  text-anchor: end;
+  dominant-baseline: middle;
+}
+
+.y-axis .tick line {
+  stroke: var(--text-primary);
+  opacity: 0.3;
+}
+
+/* Circle hover effects */
+circle {
+  transition: transform 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+  cursor: pointer;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
+circle.selected {
+  fill: #ff6b6b !important;
+  stroke: #ff6b6b;
+  stroke-width: 2;
+}
+
+/* Brush selection styling */
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8; /* 5 + 3 */
+  }
+}
+
+.selection {
+  fill-opacity: 0.1;
+  stroke: var(--text-primary);
+  stroke-opacity: 0.7;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+/* Selection count and language breakdown styling */
+#selection-count {
+  margin: 1em 0;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+#language-breakdown {
+  margin: 1.5em 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em 2em;
+  font-size: 1.1em;
+  padding: 0;
+}
+
+#language-breakdown .language-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.75em;
+  border-radius: 0.25em;
+  background-color: rgba(255, 107, 53, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+#language-breakdown .language-item:hover {
+  background-color: rgba(255, 107, 53, 0.1);
+}
+
+#language-breakdown .language-label {
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+#language-breakdown .language-value {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.15em;
+  font-weight: 500;
+}
+
+/* Tooltip styling */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em 1em;
+  margin: 0;
+  padding: 0;
+  transition-duration: 200ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info dt {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+dl.info dd {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 0.95em;
+}
+
+dl.info a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+dl.info a:hover {
+  text-decoration: underline;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.5em;
+  padding: 1em 1.25em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 300px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tooltip {
+    background-color: rgba(30, 30, 30, 0.95);
+    border-color: var(--border-subtle);
+  }
+}
+
+html[style*="color-scheme: dark"] .tooltip,
+html.dark-mode .tooltip {
+  background-color: rgba(30, 30, 30, 0.95);
+  border-color: var(--border-subtle);
+}
+
+.tooltip[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 4em;
+  padding: 2em 0;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.footer-logo {
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-logo:hover {
+  opacity: 0.8;
+}
+
+.footer-logo-img {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 0.5em;
+  border-radius: 0.25em;
+}
+
+.social-link:hover {
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+}
+
+.footer-copyright {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9em;
 }
 
 /* Print-friendly styles */
@@ -466,6 +860,10 @@ hr {
   }
   
   nav {
+    display: none;
+  }
+  
+  footer {
     display: none;
   }
   
