@@ -10,16 +10,26 @@
 <body>
   <h1>Code Analysis</h1>
   <p>This page displays meta-analysis and statistics about the codebase of this portfolio website.</p>
-  <p>Here you can find insights into the structure, size, and composition of the code used to build this site.</p>
-  <h2>Summary</h2>
+
   <div id="stats"></div>
   
   <h2>Commits by time of day</h2>
-  <div id="chart"></div>
+  <div id="scrolly-1">
+    <div id="scatter-story"></div>
+    <div id="scatter-plot">
+      <div id="chart"></div>
+      <p id="selection-count">No commits selected</p>
+      <div id="language-breakdown"></div>
+    </div>
+  </div>
   
-  <p id="selection-count">No commits selected</p>
-  
-  <div id="language-breakdown"></div>
+  <h2>File sizes over time</h2>
+  <div id="scrolly-2">
+    <div id="files-story"></div>
+    <div id="files-plot">
+      <dl id="files"></dl>
+    </div>
+  </div>
   
   <dl id="commit-tooltip" class="info tooltip" hidden>
     <dt>Commit</dt>
@@ -31,7 +41,7 @@
     <dd id="commit-date"></dd>
 
     <dt>Time</dt>
-    <dd id="commit-time"></dd>
+    <dd id="commit-time-tooltip"></dd>
 
     <dt>Author</dt>
     <dd id="commit-author"></dd>

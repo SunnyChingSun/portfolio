@@ -636,10 +636,16 @@ h2:has(+ #profile-stats) {
 
 /* Circle hover effects */
 circle {
-  transition: transform 200ms;
+  transition: transform 200ms, r 200ms;
   transform-origin: center;
   transform-box: fill-box;
   cursor: pointer;
+}
+
+@starting-style {
+  circle {
+    r: 0;
+  }
 }
 
 circle:hover {
@@ -716,6 +722,93 @@ circle.selected {
   color: var(--text-primary);
   font-size: 1.15em;
   font-weight: 500;
+}
+
+/* File visualization styling */
+#files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-bottom: 1.5em;
+}
+
+#files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#files dt {
+  grid-column: 1;
+}
+
+#files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color, steelblue);
+  border-radius: 50%;
+}
+
+/* Scrolly styling */
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+#scrolly-1 > * {
+  flex: 1;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+/* Second scrolly section for file visualizations */
+#scrolly-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+#scrolly-2 > * {
+  flex: 1;
+}
+
+#files-story {
+  position: relative;
+}
+
+#files-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+  overflow-y: auto;
+}
+
+.step {
+  padding-bottom: 2em;
 }
 
 /* Tooltip styling */
